@@ -9,6 +9,26 @@ class IndexView(generic.ListView):
     template_name = "app_list/index.html"
 
 
+class TaskCreateView(generic.CreateView):
+
+    model = Task
+    fields = "__all__"
+    success_url = reverse_lazy("app_list:index")
+
+
+class TaskUpdateView(generic.UpdateView):
+
+    model = Task
+    fields = "__all__"
+    success_url = reverse_lazy("app_list:index")
+
+
+class TaskDeleteView(generic.DeleteView):
+
+    model = Task
+    success_url = reverse_lazy("app_list:index")
+
+
 class TagView(generic.ListView):
     queryset = Tag.objects.prefetch_related("tasks")
 
@@ -16,16 +36,14 @@ class TagView(generic.ListView):
 class TagCreateView(generic.CreateView):
 
     model = Tag
-    fields = "__all__"
-    template_name = "app_list/tag_form.html"
+    fields = ("name",)
     success_url = reverse_lazy("app_list:tag-list")
 
 
 class TagUpdateView(generic.UpdateView):
 
     model = Tag
-    fields = "__all__"
-    template_name = "app_list/tag_form.html"
+    fields = ("name",)
     success_url = reverse_lazy("app_list:tag-list")
 
 
