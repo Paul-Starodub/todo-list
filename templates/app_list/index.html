@@ -3,7 +3,7 @@
 {% block content %}
   <h1>
     TODO List
-    <a style="float: right" class="btn btn-primary" href="#">Add task</a>
+    <a style="float: right" class="btn btn-primary" href="{% url 'app_list:task-create' %}">Add task</a>
   </h1>
   <div class="my_high"></div>
   <div>
@@ -41,8 +41,8 @@
         {% for tag in task.tags.all %}
           {{ tag.name }}
         {% endfor %}
-        <a href="#">Update</a>
-        <a href="#">Delete</a>
+        <a href="{% url 'app_list:task-update' pk=task.id %}">Update</a>
+        <a href="{% url 'app_list:task-delete' pk=task.id %}">Delete</a>
       </p>
       <hr>
     {% endfor %}
