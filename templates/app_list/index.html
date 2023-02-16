@@ -13,7 +13,7 @@
         {% if task.is_done %}
           <span class="text-success">Done</span>
           <a
-            href="#"
+            href="{% url 'app_list:task-update-tag' pk=task.id %}"
             class="btn btn-secondary link-to-page"
             style="float: right"
           >
@@ -22,7 +22,7 @@
         {% else %}
           <span class="text-danger">Not done</span>
           <a
-            href="#"
+            href="{% url 'app_list:task-update-tag' pk=task.id %}"
             class="btn bg-success link-to-page text-white"
             style="float: right"
           >
