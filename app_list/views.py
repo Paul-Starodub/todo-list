@@ -4,5 +4,5 @@ from app_list.models import Task
 
 
 class IndexView(generic.ListView):
-    queryset = Task.objects.all()
+    queryset = Task.objects.prefetch_related("tags")
     template_name = "app_list/index.html"
