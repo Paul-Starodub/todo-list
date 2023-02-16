@@ -3,7 +3,7 @@
 {% block content %}
   <h1>
     Tags
-    <a style="float: right" class="btn btn-primary text-white" href="#">Add</a>
+    <a style="float: right" class="btn btn-primary text-white" href="{% url 'app_list:tag-create' %}">Add</a>
   </h1>
   <div class="my_high"></div>
   {% if tag_list %}
@@ -21,7 +21,7 @@
           <td>
             <a
               class="btn btn-secondary"
-              href="#"
+              href="{% url 'app_list:tag-update' pk=tag.id %}"
             >
               Update
             </a>
@@ -29,7 +29,7 @@
           <td>
             <a
               class="btn btn-secondary"
-              href="#"
+              href="{% url 'app_list:task-delete' pk=tag.id %}"
             >
               Delete
             </a>
