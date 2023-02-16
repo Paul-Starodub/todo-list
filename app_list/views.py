@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views import generic
 
-# Create your views here.
+from app_list.models import Task
+
+
+class IndexView(generic.ListView):
+    queryset = Task.objects.all()
+    template_name = "app_list/index.html"
