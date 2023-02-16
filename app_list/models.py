@@ -17,3 +17,6 @@ class Task(models.Model):
 
     class Meta:
         ordering = ["is_done", "-datetime"]
+
+    def __str__(self):
+        return f"{self.content[:8]}..."
