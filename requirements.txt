@@ -8,7 +8,6 @@ flake8-quotes==3.3.2
 flake8-variables-names==0.0.5
 mccabe==0.7.0
 mypy-extensions==1.0.0
-packaging==23.0
 pycodestyle==2.10.0
 pyflakes==3.0.1
 python-dotenv==0.21.1
